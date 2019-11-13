@@ -1,0 +1,6 @@
+framework module Pods_LoginService_Example {
+  umbrella header "Pods-LoginService_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
