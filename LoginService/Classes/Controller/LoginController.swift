@@ -6,24 +6,36 @@
 //
 
 import UIKit
+import HBDNavigationBar
+import Extensions
 
 class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
+        self.hbd_barShadowHidden = true
+        self.hbd_barAlpha = 0
         
-        let bundle = Bundle(for: type(of: self))
-        if let url = URL(string: bundle.bundleIdentifier ?? "") {
-            if let bundleURL = bundle.url(forResource: url.pathExtension, withExtension: "bundle") {
-                let imageBundle = Bundle(url: bundleURL)
-                let image = UIImage(named: "back", in: imageBundle, compatibleWith: nil)
-                navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(leftBarButtonItemClick))
-            }
-        }
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "返回", style: .plain, target: self, action: #selector(leftBarButtonItemClick))
+        navigationItem.leftBarButtonItem?.imageInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: -8)
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes([.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 15)], for: .normal)
+        navigationItem.leftBarButtonItem?.setTitleTextAttributes([.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 15)], for: .highlighted)
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "注册", style: .plain, target: self, action: #selector(rightBarButtonItemClick))
+        navigationItem.rightBarButtonItem?.imageInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: -8)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 15)], for: .normal)
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([.foregroundColor : UIColor.black, .font : UIFont.systemFont(ofSize: 15)], for: .highlighted)
     }
 
     @objc func leftBarButtonItemClick() {
         self.dismiss(animated: true, completion: nil)
     }
+
+    @objc func rightBarButtonItemClick() {
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.white
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
 }

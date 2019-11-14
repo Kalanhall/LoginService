@@ -16,7 +16,7 @@
     "tag": "0.0.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "LoginService/Classes/**/*",
   "resource_bundles": {
@@ -25,6 +25,9 @@
     ]
   },
   "dependencies": {
+    "Extensions": [
+      "~> 1.0.0"
+    ],
     "HBDNavigationBar": [
 
     ]

@@ -1,6 +1,8 @@
 PODS:
+  - Extensions (0.1.0)
   - HBDNavigationBar (1.6.6)
   - LoginService (0.0.1):
+    - Extensions
     - HBDNavigationBar
 
 DEPENDENCIES:
@@ -8,6 +10,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Extensions
     - HBDNavigationBar
 
 EXTERNAL SOURCES:
@@ -15,8 +18,9 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
+  Extensions: d6aa7cac7184f242f3bffe4256267a35f1215873
   HBDNavigationBar: b3c63058aa0c1509da6646469c491d9b70edbde1
-  LoginService: 107074b1ce88a7d35dd199541d8a98864ec1d187
+  LoginService: 5fec0dd29a85b8c170eb0e4270215dd095a62d3f
 
 PODFILE CHECKSUM: 0623d86da35fcdd2a44182b047b327d2a9211acf
 

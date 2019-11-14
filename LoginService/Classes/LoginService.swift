@@ -6,12 +6,10 @@
 //
 
 import UIKit
-import HBDNavigationBar
 
-open class LoginService: NSObject {
-    static public func login() -> Void {
+@objc class LoginService: NSObject {
+    @objc func nativeToLogin(_ parameters: NSDictionary) -> UIViewController {
         let vc = LoginController()
-        let nc = HBDNavigationController(rootViewController: vc)
-        UIApplication.shared.keyWindow?.rootViewController?.present(nc, animated: true, completion: nil)
+        return vc;
     }
 }
