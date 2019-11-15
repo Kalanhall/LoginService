@@ -164,11 +164,13 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Extensions/Extensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HBDNavigationBar/HBDNavigationBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LoginService/LoginService.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Extensions/Extensions.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/HBDNavigationBar/HBDNavigationBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LoginService/LoginService.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

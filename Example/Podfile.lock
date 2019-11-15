@@ -4,6 +4,8 @@ PODS:
   - LoginService (0.0.1):
     - Extensions
     - HBDNavigationBar
+    - SnapKit
+  - SnapKit (4.2.0)
 
 DEPENDENCIES:
   - LoginService (from `../`)
@@ -12,6 +14,7 @@ SPEC REPOS:
   trunk:
     - Extensions
     - HBDNavigationBar
+    - SnapKit
 
 EXTERNAL SOURCES:
   LoginService:
@@ -20,7 +23,8 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Extensions: d6aa7cac7184f242f3bffe4256267a35f1215873
   HBDNavigationBar: b3c63058aa0c1509da6646469c491d9b70edbde1
-  LoginService: 5fec0dd29a85b8c170eb0e4270215dd095a62d3f
+  LoginService: 54557f2b8eb35590ea2b9008f0e062a8ab66f510
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
 
 PODFILE CHECKSUM: 0623d86da35fcdd2a44182b047b327d2a9211acf
 
