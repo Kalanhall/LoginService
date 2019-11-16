@@ -22,6 +22,7 @@ class LoginController: UIViewController {
     
     let logo = UIImageView()
     let logoTitle = UILabel()
+    let shadowView = UIView()
     
     let disposeBag = DisposeBag()
     let viewModel = LoginViewModel()
