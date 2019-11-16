@@ -20,33 +20,23 @@ enum LoginOption: Int {
 
 class LoginController: UIViewController {
     
-    let imageView = UIImageView()
-    let regisBtn = UIButton(type: .custom)
-    let loginBtn = UIButton(type: .custom)
-    let viewModel = LoginViewModel()
+    let logo = UIImageView()
+    let logoTitle = UILabel()
+    
     let disposeBag = DisposeBag()
+    let viewModel = LoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewsSetup()
         eventSetup()
     }
+    
+    func eventSetup() {
+        
+    }
 
     @objc func rightBarButtonItemClick() {
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func eventSetup() {
-        regisBtn.rx.tap
-            .subscribe { (Void) in
-                print("button Tapped")
-            }
-            .disposed(by: disposeBag)
-        
-        loginBtn.rx.tap
-            .subscribe { (Void) in
-                print("button Tapped")
-            }
-            .disposed(by: disposeBag)
     }
 }
