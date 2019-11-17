@@ -41,7 +41,7 @@ TODO: Add long description of the pod here.
   s.dependency 'Alamofire'
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
-  s.dependency 'Extensions'
+  s.dependency 'Extensions', '~> 1.0.1'
   s.dependency 'HBDNavigationBar'
   
 end

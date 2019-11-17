@@ -22,7 +22,13 @@ class LoginController: UIViewController {
     
     let logo = UIImageView()
     let logoTitle = UILabel()
-    let shadowView = UIView()
+    let shadowView = LoginShadow()
+    let userIcon = UIImageView()
+    let userName = UILabel()
+    let loginBtn = UIButton()
+    let regisBtn = UIButton()
+    let account = UITextField()
+    let forget = UIButton()
     
     let disposeBag = DisposeBag()
     let viewModel = LoginViewModel()
