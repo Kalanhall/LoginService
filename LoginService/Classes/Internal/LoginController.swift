@@ -12,6 +12,11 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
+enum LoginStatus {
+    case account
+    case password
+}
+
 class LoginController: UIViewController {
     
     let logo        = UIImageView()
@@ -25,6 +30,9 @@ class LoginController: UIViewController {
     
     let disposeBag = DisposeBag()
     let viewModel = LoginViewModel()
+    var account: String?
+    var password: String?
+    var loginStatus = LoginStatus.account
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,14 +41,22 @@ class LoginController: UIViewController {
     }
     
     func eventSetup() {
+
+        loginBtn.rx.tap
+            .subscribe { [weak self] (Void) in
         
-        loginBtn.rx.tap.subscribe { [weak self] (Void) in
-            
-        }.disposed(by: disposeBag)
+            }
+            .disposed(by: disposeBag)
         
+        backBtn.rx.tap
+            .subscribe { [weak self] (Void) in
+                
+            }
+            .disposed(by: disposeBag)
     }
 
     @objc func rightBarButtonItemClick() {
         self.dismiss(animated: true, completion: nil)
     }
+
 }

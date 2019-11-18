@@ -19,7 +19,7 @@ extension LoginController {
         view.backgroundColor = UIColor.color(hexNumber: 0xF8F8F8)
         
         accountView.account.placeholder = "Enter your account"
-        accountView.forget.isHidden = true
+        accountView.account.clearButtonMode = .whileEditing
         view.addSubview(accountView)
         accountView.snp_makeConstraints { (make) in
             make.left.equalTo(30.auto())
@@ -40,7 +40,7 @@ extension LoginController {
             make.width.height.equalTo(60.auto())
         }
         
-        logoTitle.text = "BASE SWIFT PROJECT."
+        logoTitle.text = "SWIFT PROJECT"
         logoTitle.font = UIFont.boldSystemFont(ofSize: 15.auto())
         view.addSubview(logoTitle)
         logoTitle.snp_makeConstraints { (make) in
@@ -85,9 +85,8 @@ extension LoginController {
         loginBtn.layer.cornerRadius = 20.auto()
         loginBtn.layer.borderWidth = 1
         loginBtn.layer.masksToBounds = true
-        loginBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.auto())
         loginBtn.setTitle("NEXT", for: .normal)
-        loginBtn.setTitle("SIGN IN", for: .selected)
+        loginBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.auto())
         loginBtn.setTitleColor(UIColor.black, for: .highlighted)
         loginBtn.setBackgroundImage(UIImage.image(color: UIColor.black), for: .normal)
         loginBtn.setBackgroundImage(UIImage.image(color: UIColor.black), for: .selected)
@@ -126,7 +125,6 @@ extension LoginController {
         regisBtn.layer.shadowOpacity = 0.2
         regisBtn.layer.shadowOffset = CGSize(width: 3, height: 3)
         
-        backBtn.isHidden = true
         backBtn.setImage(UIImage.image(named: "back2", in:Bundle(for: type(of: self))), for: .normal)
         view.addSubview(backBtn)
         backBtn.snp_makeConstraints { (make) in
@@ -136,8 +134,24 @@ extension LoginController {
         backBtn.layer.shadowColor = UIColor.black.cgColor
         backBtn.layer.shadowOpacity = 0.2
         backBtn.layer.shadowOffset = CGSize(width: 3, height: 3)
+        backBtn.alpha = 0
     }
     
+    func transform(status: LoginStatus) {
+        switch status {
+            case .account:
+                loginBtn.setTitle("NEXT", for: .normal)
+                accountView.account.placeholder = "Enter your account"
+                accountView.account.text = self.account
+                
+            default:
+                loginBtn.setTitle("SIGN IN", for: .normal)
+                accountView.account.placeholder = "Enter your password"
+                account = accountView.account.text
+                accountView.account.text = ""
+        }
+    }
+
 }
 
 class CustomShadowView: UIView {
@@ -178,16 +192,17 @@ class CustomShadowView: UIView {
         addSubview(forget)
         forget.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()
-            make.top.equalTo(line.snp_bottom).inset(-20.auto())
+            make.top.equalTo(line.snp_bottom).inset(-15.auto())
             make.height.equalTo(40.auto())
             make.width.equalTo(150.auto())
         }
+        forget.alpha = 0
 
         wxBtn.setImage(UIImage.image(named: "wx", in:Bundle(for: type(of: self))), for: .normal)
         addSubview(wxBtn)
         wxBtn.snp_makeConstraints { (make) in
             make.centerY.equalTo(forget)
-            make.right.equalTo(self.snp_centerX).inset(-5)
+            make.right.equalTo(self.snp_centerX).inset(-10)
         }
         wxBtn.layer.shadowColor = UIColor.black.cgColor
         wxBtn.layer.shadowOpacity = 0.2
@@ -197,7 +212,7 @@ class CustomShadowView: UIView {
         addSubview(qqBtn)
         qqBtn.snp_makeConstraints { (make) in
             make.centerY.equalTo(forget)
-            make.left.equalTo(self.snp_centerX).inset(5)
+            make.left.equalTo(self.snp_centerX).inset(10)
         }
         qqBtn.layer.shadowColor = UIColor.black.cgColor
         qqBtn.layer.shadowOpacity = 0.2
@@ -217,7 +232,6 @@ class CustomShadowView: UIView {
         context?.addLine(to: CGPoint(x: 0, y: self.bounds.size.height))
         context?.closePath()
         context?.fillPath()
-        
         super.draw(rect)
     }
 
