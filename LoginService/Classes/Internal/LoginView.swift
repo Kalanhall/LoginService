@@ -61,7 +61,6 @@ extension LoginController {
         shadow.layer.shadowOpacity = 0.1
         shadow.layer.shadowOffset = CGSize(width: 3, height: 3)
         
-        userIcon.image = UIImage.image(named: "icon", in:Bundle(for: type(of: self)))
         userIcon.layer.cornerRadius = 30
         userIcon.layer.masksToBounds = true
         userIcon.backgroundColor = UIColor.color(hexNumber: 0xF5F5F5)
@@ -72,8 +71,16 @@ extension LoginController {
             make.top.equalTo(accountView)
             make.width.height.equalTo(60.auto())
         }
+        let url = URL(string: "http://i0.hdslb.com/bfs/article/c3d2fdf4e0f251027bfa586de18b877f042c18db.jpg")
+        userIcon.yy_setImage(with: url, placeholder: UIImage.image(named: "icon", in:Bundle(for: type(of: self))), options: .progressiveBlur) { [weak self] (image, url, type, stage, error) in
+            if image != nil {
+                self?.userIcon.contentMode = .scaleAspectFill
+            } else {
+                self?.userIcon.contentMode = .center
+            }
+        }
         
-        userName.text = "User Name"
+        userName.text = "Swift"
         userName.font = UIFont.boldSystemFont(ofSize: 15.auto())
         userName.textAlignment = .center
         view.addSubview(userName)
@@ -83,14 +90,12 @@ extension LoginController {
         }
         
         loginBtn.layer.cornerRadius = 20.auto()
-        loginBtn.layer.borderWidth = 1
         loginBtn.layer.masksToBounds = true
         loginBtn.setTitle("NEXT", for: .normal)
         loginBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.auto())
         loginBtn.setTitleColor(UIColor.black, for: .highlighted)
         loginBtn.setBackgroundImage(UIImage.image(color: UIColor.black), for: .normal)
-        loginBtn.setBackgroundImage(UIImage.image(color: UIColor.black), for: .selected)
-        loginBtn.setBackgroundImage(UIImage.image(color: UIColor.white), for: .highlighted)
+        loginBtn.setBackgroundImage(UIImage.image(color: UIColor.color(hexNumber: 0xF8F8F8)), for: .highlighted)
         view.addSubview(loginBtn)
         loginBtn.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()

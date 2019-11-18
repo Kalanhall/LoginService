@@ -43,5 +43,6 @@ TODO: Add long description of the pod here.
   s.dependency 'RxCocoa', '~> 5'
   s.dependency 'Extensions', '~> 1.0.1'
   s.dependency 'HBDNavigationBar'
+  s.dependency 'YYWebImage'
   
 end

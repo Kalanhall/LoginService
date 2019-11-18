@@ -11,6 +11,7 @@ import Extensions
 import SnapKit
 import RxSwift
 import RxCocoa
+import YYWebImage
 
 enum LoginStatus {
     case account
