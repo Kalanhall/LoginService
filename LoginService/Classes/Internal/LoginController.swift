@@ -12,23 +12,16 @@ import SnapKit
 import RxSwift
 import RxCocoa
 
-enum LoginOption: Int {
-    case nomal = 0
-    case regis = 1
-    case login = 2
-}
-
 class LoginController: UIViewController {
     
-    let logo = UIImageView()
-    let logoTitle = UILabel()
-    let shadowView = LoginShadow()
-    let userIcon = UIImageView()
-    let userName = UILabel()
-    let loginBtn = UIButton()
-    let regisBtn = UIButton()
-    let account = UITextField()
-    let forget = UIButton()
+    let logo        = UIImageView()
+    let logoTitle   = UILabel()
+    let accountView = CustomShadowView()
+    let userIcon    = UIImageView()
+    let userName    = UILabel()
+    let loginBtn    = UIButton()
+    let regisBtn    = UIButton()
+    let backBtn     = UIButton() // 返回按钮
     
     let disposeBag = DisposeBag()
     let viewModel = LoginViewModel()
@@ -40,6 +33,10 @@ class LoginController: UIViewController {
     }
     
     func eventSetup() {
+        
+        loginBtn.rx.tap.subscribe { [weak self] (Void) in
+            
+        }.disposed(by: disposeBag)
         
     }
 
