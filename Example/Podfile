@@ -1,7 +1,11 @@
 use_frameworks!
+source 'https://cdn.cocoapods.org'
+source 'https://github.com/Kalanhall/kalanrepo.git'
+inhibit_all_warnings!
 
 target 'LoginService_Example' do
   pod 'LoginService', :path => '../'
+  pod 'LoginServiceInterface', :path=>'/Users/kalan/Desktop/Swift/LoginServiceInterface'
 
   target 'LoginService_Tests' do
     inherit! :search_paths

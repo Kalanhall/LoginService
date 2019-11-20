@@ -7,7 +7,8 @@
 //
 
 import UIKit
-import LoginService
+import HBDNavigationBar
+import LoginServiceInterface
 
 class ViewController: UIViewController {
 
@@ -20,10 +21,11 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        LoginService.login()
-    }
 
+    @IBAction func modal(_ sender: Any) {
+        let vc = KLServer.shared().login(with: nil)
+        let nc = HBDNavigationController(rootViewController: vc)
+        present(nc, animated: true, completion: nil)
+    }
 }
 

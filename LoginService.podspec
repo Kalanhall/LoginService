@@ -37,12 +37,14 @@ TODO: Add long description of the pod here.
   }
 
   # s.frameworks = 'UIKit', 'MapKit'
+  s.dependency 'Extensions', '~> 1.0.0'
+  s.dependency 'KLProgressHUD', '~> 1.0.0'
   s.dependency 'SnapKit'
   s.dependency 'Alamofire'
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
-  s.dependency 'Extensions', '~> 1.0.1'
   s.dependency 'HBDNavigationBar'
   s.dependency 'YYWebImage'
+  s.dependency 'IQKeyboardManagerSwift'
   
 end

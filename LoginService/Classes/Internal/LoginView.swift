@@ -7,20 +7,23 @@
 
 import UIKit
 
-extension LoginController {
+class LoginView: UIView {
     
-    func viewsSetup() {
-        self.hbd_barShadowHidden = true
-        self.hbd_barAlpha = 0
-        self.hbd_barStyle = .blackOpaque
-        let image = UIImage.image(named: "back", in:Bundle(for: type(of: self)))
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(rightBarButtonItemClick))
-        
-        view.backgroundColor = UIColor.color(hexNumber: 0xF8F8F8)
-        
-        accountView.account.placeholder = "Enter your account"
-        accountView.account.clearButtonMode = .whileEditing
-        view.addSubview(accountView)
+    let logo        = UIImageView()
+    let logoTitle   = UILabel()
+    let accountView = CustomShadowView()
+    let userIcon    = UIImageView()
+    let userName    = UILabel()
+    let loginBtn    = UIButton()
+    let regisBtn    = UIButton()
+    let backBtn     = UIButton() // 返回按钮
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = UIColor.color(hexNumber: 0xF8F8F8)
+            
+        accountView.accountTF.clearButtonMode = .whileEditing
+        addSubview(accountView)
         accountView.snp_makeConstraints { (make) in
             make.left.equalTo(30.auto())
             make.right.equalTo(-30.auto())
@@ -33,7 +36,7 @@ extension LoginController {
         
         logo.image = UIImage.image(named: "logo", in:Bundle(for: type(of: self)))
         logo.contentMode = .scaleAspectFit
-        view.addSubview(logo)
+        addSubview(logo)
         logo.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.bottom.equalTo(accountView.snp_top).inset(-100.auto())
@@ -42,7 +45,7 @@ extension LoginController {
         
         logoTitle.text = "SWIFT PROJECT"
         logoTitle.font = UIFont.boldSystemFont(ofSize: 15.auto())
-        view.addSubview(logoTitle)
+        addSubview(logoTitle)
         logoTitle.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(logo.snp_bottom).inset(-5)
@@ -51,7 +54,7 @@ extension LoginController {
         // Another shadow
         let shadow = UIView()
         shadow.backgroundColor = UIColor.white
-        view.insertSubview(shadow, belowSubview: accountView)
+        insertSubview(shadow, belowSubview: accountView)
         shadow.snp_makeConstraints { (make) in
             make.left.right.equalTo(accountView).inset(15.auto())
             make.bottom.equalTo(accountView).inset(-5)
@@ -65,25 +68,17 @@ extension LoginController {
         userIcon.layer.masksToBounds = true
         userIcon.backgroundColor = UIColor.color(hexNumber: 0xF5F5F5)
         userIcon.contentMode = .center
-        view.addSubview(userIcon)
+        userIcon.image = UIImage.image(named: "icon", in:Bundle(for: type(of: self)))
+        addSubview(userIcon)
         userIcon.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(accountView)
             make.width.height.equalTo(60.auto())
         }
-        let url = URL(string: "http://i0.hdslb.com/bfs/article/c3d2fdf4e0f251027bfa586de18b877f042c18db.jpg")
-        userIcon.yy_setImage(with: url, placeholder: UIImage.image(named: "icon", in:Bundle(for: type(of: self))), options: .progressiveBlur) { [weak self] (image, url, type, stage, error) in
-            if image != nil {
-                self?.userIcon.contentMode = .scaleAspectFill
-            } else {
-                self?.userIcon.contentMode = .center
-            }
-        }
         
-        userName.text = "Swift"
         userName.font = UIFont.boldSystemFont(ofSize: 15.auto())
         userName.textAlignment = .center
-        view.addSubview(userName)
+        addSubview(userName)
         userName.snp_makeConstraints { (make) in
             make.left.right.equalTo(accountView).inset(15)
             make.top.equalTo(userIcon.snp_bottom).inset(-10)
@@ -91,12 +86,11 @@ extension LoginController {
         
         loginBtn.layer.cornerRadius = 20.auto()
         loginBtn.layer.masksToBounds = true
-        loginBtn.setTitle("NEXT", for: .normal)
         loginBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.auto())
         loginBtn.setTitleColor(UIColor.black, for: .highlighted)
         loginBtn.setBackgroundImage(UIImage.image(color: UIColor.black), for: .normal)
         loginBtn.setBackgroundImage(UIImage.image(color: UIColor.color(hexNumber: 0xF8F8F8)), for: .highlighted)
-        view.addSubview(loginBtn)
+        addSubview(loginBtn)
         loginBtn.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.centerY.equalTo(accountView.snp_bottom)
@@ -110,16 +104,15 @@ extension LoginController {
         loginbg.layer.shadowOpacity = 0.2
         loginbg.layer.shadowOffset = CGSize(width: 0, height: 3)
         loginbg.layer.cornerRadius = 20
-        view.insertSubview(loginbg, belowSubview: loginBtn)
+        insertSubview(loginbg, belowSubview: loginBtn)
         loginbg.snp_makeConstraints { (make) in
             make.edges.equalTo(loginBtn)
         }
         
         regisBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14.auto())
-        regisBtn.setTitle("SIGN UP", for: .normal)
         regisBtn.setTitleColor(UIColor.black, for: .normal)
         regisBtn.setTitleColor(UIColor.lightGray, for: .highlighted)
-        view.addSubview(regisBtn)
+        addSubview(regisBtn)
         regisBtn.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()
             make.top.equalTo(accountView.snp_bottom).inset(-40.auto())
@@ -131,7 +124,7 @@ extension LoginController {
         regisBtn.layer.shadowOffset = CGSize(width: 3, height: 3)
         
         backBtn.setImage(UIImage.image(named: "back2", in:Bundle(for: type(of: self))), for: .normal)
-        view.addSubview(backBtn)
+        addSubview(backBtn)
         backBtn.snp_makeConstraints { (make) in
             make.centerY.equalTo(regisBtn)
             make.left.equalTo(30.auto())
@@ -142,27 +135,15 @@ extension LoginController {
         backBtn.alpha = 0
     }
     
-    func transform(status: LoginStatus) {
-        switch status {
-            case .account:
-                loginBtn.setTitle("NEXT", for: .normal)
-                accountView.account.placeholder = "Enter your account"
-                accountView.account.text = self.account
-                
-            default:
-                loginBtn.setTitle("SIGN IN", for: .normal)
-                accountView.account.placeholder = "Enter your password"
-                account = accountView.account.text
-                accountView.account.text = ""
-        }
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
-
 }
 
 class CustomShadowView: UIView {
     
     let line    = UIView()
-    let account = UITextField()
+    let accountTF = UITextField()
     let forget  = UIButton()
     let wxBtn   = UIButton() // 微信登陆
     let qqBtn   = UIButton() // QQ登陆
@@ -180,20 +161,21 @@ class CustomShadowView: UIView {
             make.centerY.equalToSuperview().inset(30.auto())
         }
         
-        account.textAlignment = .center
-        account.textColor = UIColor.black
-        account.font = UIFont.systemFont(ofSize: 14.auto())
-        addSubview(account)
-        account.snp_makeConstraints { (make) in
+        accountTF.textAlignment = .center
+        accountTF.textColor = UIColor.black
+        accountTF.font = UIFont.systemFont(ofSize: 14.auto())
+        addSubview(accountTF)
+        accountTF.snp_makeConstraints { (make) in
             make.left.right.equalTo(line)
             make.bottom.equalTo(line.snp_top)
             make.height.equalTo(35.auto())
         }
         
         forget.titleLabel?.font = UIFont.systemFont(ofSize: 12.auto())
-        forget.setTitle("Forget password?", for: .normal)
+        forget.setTitle("忘记密码?", for: .normal)
         forget.setTitleColor(UIColor.color(hexNumber: 0x666666), for: .normal)
         forget.setTitleColor(UIColor.lightGray, for: .highlighted)
+        forget.isHidden = true
         addSubview(forget)
         forget.snp_makeConstraints { (make) in
             make.centerX.equalToSuperview()
@@ -201,7 +183,6 @@ class CustomShadowView: UIView {
             make.height.equalTo(40.auto())
             make.width.equalTo(150.auto())
         }
-        forget.alpha = 0
 
         wxBtn.setImage(UIImage.image(named: "wx", in:Bundle(for: type(of: self))), for: .normal)
         addSubview(wxBtn)

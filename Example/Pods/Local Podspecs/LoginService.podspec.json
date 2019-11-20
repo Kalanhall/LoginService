@@ -25,13 +25,31 @@
     ]
   },
   "dependencies": {
+    "Extensions": [
+      "~> 1.0.0"
+    ],
+    "KLProgressHUD": [
+      "~> 1.0.0"
+    ],
     "SnapKit": [
 
     ],
-    "Extensions": [
+    "Alamofire": [
 
     ],
+    "RxSwift": [
+      "~> 5"
+    ],
+    "RxCocoa": [
+      "~> 5"
+    ],
     "HBDNavigationBar": [
+
+    ],
+    "YYWebImage": [
+
+    ],
+    "IQKeyboardManagerSwift": [
 
     ]
   }
