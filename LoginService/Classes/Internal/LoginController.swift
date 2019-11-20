@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import HBDNavigationBar
+import KLNavigationController
 import Extensions
 import SnapKit
 import RxSwift
@@ -29,8 +29,8 @@ class LoginController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hbd_barShadowHidden = true
-        self.hbd_barAlpha = 0
+        self.kl_barShadowHidden = true
+        self.kl_barAlpha = 0
         
         let image = UIImage.image(named: "back", in:Bundle(for: type(of: self)))
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(rightBarButtonItemClick))

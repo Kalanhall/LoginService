@@ -30,8 +30,8 @@ class LoginNextController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.hbd_barShadowHidden = true
-        self.hbd_barAlpha = 0
+        self.kl_barShadowHidden = true
+        self.kl_barAlpha = 0
         
         view.addSubview(loginView)
         loginView.snp_makeConstraints { (make) in

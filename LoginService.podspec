@@ -43,7 +43,7 @@ TODO: Add long description of the pod here.
   s.dependency 'Alamofire'
   s.dependency 'RxSwift', '~> 5'
   s.dependency 'RxCocoa', '~> 5'
-  s.dependency 'HBDNavigationBar'
+  s.dependency 'KLNavigationController'
   s.dependency 'YYWebImage'
   s.dependency 'IQKeyboardManagerSwift'
   

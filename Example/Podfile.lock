@@ -1,16 +1,16 @@
 PODS:
   - Alamofire (4.9.1)
   - Extensions (1.0.1)
-  - HBDNavigationBar (1.6.6)
   - IQKeyboardManagerSwift (6.5.4)
+  - KLNavigationController (1.0.0)
   - KLProgressHUD (1.0.1):
     - MBProgressHUD
   - KLServer (1.0.0)
   - LoginService (0.0.1):
     - Alamofire
     - Extensions (~> 1.0.0)
-    - HBDNavigationBar
     - IQKeyboardManagerSwift
+    - KLNavigationController
     - KLProgressHUD (~> 1.0.0)
     - RxCocoa (~> 5)
     - RxSwift (~> 5)
@@ -44,8 +44,8 @@ SPEC REPOS:
     - KLProgressHUD
   trunk:
     - Alamofire
-    - HBDNavigationBar
     - IQKeyboardManagerSwift
+    - KLNavigationController
     - KLServer
     - MBProgressHUD
     - RxCocoa
@@ -65,11 +65,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   Extensions: 7849df56ec17d716b5d58d06f4b9b9115c2f23f9
-  HBDNavigationBar: b3c63058aa0c1509da6646469c491d9b70edbde1
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
+  KLNavigationController: ed8a50a14e54a499d3a483c681bb7f394002a6bf
   KLProgressHUD: 02604b90a034a25bf5ecf9305df9967e0b961249
   KLServer: b37b4d567aa189afe1284ed316b4419f2029221e
-  LoginService: 6fe07f72bd449b8a11dc449132f98757ea638be2
+  LoginService: f282bd3b58e087d3f4d95e1fe95644c81ab3ae07
   LoginServiceInterface: c93b38882a88c11c0745ade477f84d24feea0809
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c

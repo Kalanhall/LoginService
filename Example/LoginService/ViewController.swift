@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import HBDNavigationBar
+import KLNavigationController
 import LoginServiceInterface
 
 class ViewController: UIViewController {
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
 
     @IBAction func modal(_ sender: Any) {
         let vc = KLServer.shared().login(with: nil)
-        let nc = HBDNavigationController(rootViewController: vc)
+        let nc = KLNavigationController(rootViewController: vc)
         present(nc, animated: true, completion: nil)
     }
 }

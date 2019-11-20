@@ -163,8 +163,8 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Extensions/Extensions.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/HBDNavigationBar/HBDNavigationBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KLNavigationController/KLNavigationController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KLProgressHUD/KLProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KLServer/KLServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LoginService/LoginService.framework"
@@ -181,8 +181,8 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Extensions/Extensions.framework"
-  install_framework "${BUILT_PRODUCTS_DIR}/HBDNavigationBar/HBDNavigationBar.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/KLNavigationController/KLNavigationController.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KLProgressHUD/KLProgressHUD.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/KLServer/KLServer.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/LoginService/LoginService.framework"
