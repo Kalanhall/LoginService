@@ -11,8 +11,6 @@ import Extensions
 import SnapKit
 import RxSwift
 import RxCocoa
-import YYWebImage
-import KLProgressHUD
 
 class LoginController: UIViewController {
     
@@ -25,6 +23,8 @@ class LoginController: UIViewController {
         loginView.regisBtn.setTitle("注 册", for: .normal)
         return loginView
     }()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,9 +40,6 @@ class LoginController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        loginView.loginBtn.rx.tap
-            .subscribe { [weak self] (Void) in self?.showLoginView() }
-            .disposed(by: disposeBag)
         
     }
     
@@ -50,11 +47,4 @@ class LoginController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
 
-    func showLoginView() {
-        if loginView.accountView.accountTF.text?.isEmpty ?? false {
-            KLProgressHUD.showBottomText("请输入账号")
-        } else {
-            self.navigationController?.pushViewController(LoginNextController(), animated: true)
-        }
-    }
 }

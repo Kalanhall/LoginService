@@ -9,6 +9,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 import KLProgressHUD
+import YYWebImage
 
 class LoginNextController: UIViewController {
     

@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class LoginViewModel: NSObject {
+class LoginViewModel {
     
-    
+
 }
