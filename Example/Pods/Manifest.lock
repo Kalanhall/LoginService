@@ -1,10 +1,9 @@
 PODS:
   - Alamofire (4.9.1)
-  - Extensions (1.0.1)
+  - Extensions (1.0.6.1)
   - IQKeyboardManagerSwift (6.5.4)
   - KLNavigationController (1.0.0)
-  - KLProgressHUD (1.0.1):
-    - MBProgressHUD
+  - KLProgressHUD (1.0.1)
   - KLServer (1.0.0)
   - LoginService (0.0.1):
     - Alamofire
@@ -18,7 +17,6 @@ PODS:
     - YYWebImage
   - LoginServiceInterface (0.0.1):
     - KLServer
-  - MBProgressHUD (1.1.0)
   - RxCocoa (5.0.1):
     - RxRelay (~> 5)
     - RxSwift (~> 5)
@@ -39,15 +37,15 @@ DEPENDENCIES:
   - LoginServiceInterface (from `/Users/kalan/Desktop/Swift/LoginServiceInterface`)
 
 SPEC REPOS:
-  https://github.com/Kalanhall/kalanrepo.git:
-    - Extensions
+  https://github.com/CocoaPods/Specs.git:
     - KLProgressHUD
+  https://github.com/Kalanhall/Specs.git:
+    - Extensions
   trunk:
     - Alamofire
     - IQKeyboardManagerSwift
     - KLNavigationController
     - KLServer
-    - MBProgressHUD
     - RxCocoa
     - RxRelay
     - RxSwift
@@ -64,14 +62,13 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
-  Extensions: 7849df56ec17d716b5d58d06f4b9b9115c2f23f9
+  Extensions: 1f990965cd1db77e4ea9a36ea1ab3ed687dad8ef
   IQKeyboardManagerSwift: 2dde0fc70110e8eac7ccce2a46fdbec6a850b414
   KLNavigationController: ed8a50a14e54a499d3a483c681bb7f394002a6bf
-  KLProgressHUD: 02604b90a034a25bf5ecf9305df9967e0b961249
+  KLProgressHUD: a853cb933344a59a1a577bc89f54c6e58e5b30b2
   KLServer: b37b4d567aa189afe1284ed316b4419f2029221e
   LoginService: f282bd3b58e087d3f4d95e1fe95644c81ab3ae07
   LoginServiceInterface: c93b38882a88c11c0745ade477f84d24feea0809
-  MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
@@ -80,6 +77,6 @@ SPEC CHECKSUMS:
   YYImage: 1e1b62a9997399593e4b9c4ecfbbabbf1d3f3b54
   YYWebImage: 5f7f36aee2ae293f016d418c7d6ba05c4863e928
 
-PODFILE CHECKSUM: 1c264777169c206b805e784e7f57f914148e003b
+PODFILE CHECKSUM: d48bf2afce7a6a9678da85be40803fc5fc549e9b
 
 COCOAPODS: 1.8.3

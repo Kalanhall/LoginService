@@ -10,7 +10,6 @@
 #endif
 #endif
 
-#import "KLProgressHUD.h"
 
 FOUNDATION_EXPORT double KLProgressHUDVersionNumber;
 FOUNDATION_EXPORT const unsigned char KLProgressHUDVersionString[];
