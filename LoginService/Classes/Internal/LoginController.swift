@@ -9,12 +9,8 @@ import UIKit
 import KLNavigationController
 import Extensions
 import SnapKit
-import RxSwift
-import RxCocoa
 
 class LoginController: UIViewController {
-    
-    let disposeBag = DisposeBag()
     
     lazy var loginView: LoginView = {
         let loginView = LoginView()
@@ -25,12 +21,12 @@ class LoginController: UIViewController {
     }()
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.kl_barShadowHidden = true
-        self.kl_barAlpha = 0
+
+        view.backgroundColor = .white
+        kl_barShadowHidden = true
+        kl_barAlpha = 0
         
         let image = UIImage.image(named: "back", in:Bundle(for: type(of: self)))
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(rightBarButtonItemClick))

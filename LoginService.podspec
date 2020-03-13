@@ -41,10 +41,7 @@ TODO: Add long description of the pod here.
   s.dependency 'KLProgressHUD', '~> 1.0.0'
   s.dependency 'SnapKit'
   s.dependency 'Alamofire'
-  s.dependency 'RxSwift', '~> 5'
-  s.dependency 'RxCocoa', '~> 5'
   s.dependency 'KLNavigationController'
-  s.dependency 'YYWebImage'
   s.dependency 'IQKeyboardManagerSwift'
   
 end
