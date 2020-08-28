@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import KLNavigationController
+import HBDNavigationBar
 import Extensions
 import SnapKit
 
@@ -25,8 +25,6 @@ class LoginController: UIViewController {
         super.viewDidLoad()
 
         view.backgroundColor = .white
-        kl_barShadowHidden = true
-        kl_barAlpha = 0
         
         let image = UIImage.image(named: "back", in:Bundle(for: type(of: self)))
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: image, style: .plain, target: self, action: #selector(rightBarButtonItemClick))
